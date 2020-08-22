@@ -1,5 +1,7 @@
 # PokemonTeste
-<img src="https://ibb.co/Ph4XyGt">
+<p align="center">
+  <img src="https://i.ibb.co/r6M8h2v/screencapture-localhost-4200-2020-08-22-17-36-33.png">
+</p>
 # Objetivo
 • Implementar um web app que consuma a API Pokemon TCG utilizando
 Angular. <br>
