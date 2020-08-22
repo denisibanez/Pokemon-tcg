@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card-detail" *ngIf="detailPokemon">
+      <img [src]="detailPokemon.imageUrlHiRes" alt="">
+
+      <div class="card-box">
+        <h1>{{ detailPokemon.name }}</h1>
+        <strong>ID: {{ detailPokemon.id }}</strong>
+        <ul *ngFor="let type of detailPokemon.types">
+          <li><strong>Type:</strong> {{ type }}</li>
+        </ul>
+
+        <ul *ngFor="let attack of detailPokemon.attacks">
+          <li> 
+            <strong>Nome do ataque:</strong> {{ attack.name }} <br>
+            <strong>Custo:</strong> {{ attack.convertedEnergyCost }} <br>
+            <strong>Dano:</strong> {{ attack.damage }} <br>
+            <strong>Descrição:</strong><br> {{ attack.text }} <br>         
+          </li>
+        </ul>
+
+        <ul *ngFor="let weaknesses of detailPokemon.weaknesses">
+          <li><strong>Fraquezas:</strong> {{ weaknesses.type }}</li>
+        </ul>
+
+        <button class="btn" [routerLink]="['/']">
+          Voltar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

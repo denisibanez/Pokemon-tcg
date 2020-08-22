@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pokemon-teste"
+    }
+  },
+  "defaultProject": "pokemon-teste",
+  "cli": {
+    "analytics": false
+  }
 }

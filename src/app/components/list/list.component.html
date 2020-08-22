@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="content-body">
+      <div class="card" *ngFor="let item of listPokemon.cards">
+        <img [src]="item.imageUrl" class="card-img-top" [alt]="item.name">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text"><strong>ID:</strong> {{ item.id }}</p>
+          <p *ngFor="let type of item.types"><strong >Tipos:</strong> {{ type }}</p>
+          <button class="btn btn-primary" [routerLink]="['/detalhe',item.id]">Detalhar</button>
+        </div>
+      </div>
+
+      <div class="pagination">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" aria-label="Previous" (click)="prev()">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+              </a>
+            </li>
+            <li class="page-item" [class]="{ 'active' : i + 1 == currentItem }" *ngFor="let item of arrayOne(10); let i = index;"><a class="page-link"  (click)="currentPage(i)"> {{ i+1 }}</a></li>
+            <li class="page-item">
+              <a class="page-link" aria-label="Next" (click)="next()">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
