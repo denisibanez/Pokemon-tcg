@@ -1,4 +1,38 @@
 # PokemonTeste
+<p align="center">
+  <img src="https://i.ibb.co/MPCdsys/screencapture-localhost-4200-2020-08-22-22-15-59.png">
+</p>
+# Objetivo
+• Implementar um web app que consuma a API Pokemon TCG utilizando
+Angular. <br>
+• A aplicação deve possuir 2 páginas:<br>
+o Página com lista somente das cartas Pokemon:<br>
+▪ Imagem da carta<br>
+▪ Nome do Pokemon<br>
+▪ ID do Pokemon<br>
+▪ Tipo(s)<br>
+# A Páginas de detalhes da carta de Pokemon<br>
+▪ Imagem em alta definição<br>
+▪ Nome<br>
+▪ ID do Pokemon<br>
+▪ Tipo(s)<br>
+▪ Lista de ataques com:<br>
+▪ Custo de “mana”<br>
+▪ Nome<br>
+▪ Dano<br>
+▪ Descrição<br>
+▪ Resistencia(s)<br>
+▪ Fraqueza(s)<br>
+# Requisitos específicos<br>
+• A aplicação deverá ser responsiva, mobile-first<br>
+• A aplicação deverá utilizar a funcionalidade de rotas<br>
+• A lista de cartas deverá estar ordenada por nome<br>
+• A aplicação deve conter a funcionalidade de busca por nome<br>
+# Extras<br>
+• Conter testes E2E<br><br>
+• Conter testes unitários<br>
+• Utilizar SASS(variáveis, mixins, etc)<br>
+• Utilizar programação funcional<br>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
