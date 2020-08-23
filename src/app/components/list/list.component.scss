@@ -4,8 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 60vh;
-  margin: 0 0 50px;
+  margin: 0 0 30px;
   flex-wrap: wrap;
   z-index: 1;
   position: relative;
@@ -49,35 +48,64 @@
       }
     }
   }
-  
-  .pagination {
-    margin-top: 25px;
-    .page-item {
-      a {
-        background-color: #000000;
-        border: #ffdc22 1px solid;
-        color: #ffdc22;
-        border-radius: 5px;
+}
 
-        &:hover {
-          background-color: #ffdc22;
-          border: #000000 1px solid;
-          color: #000000;
-        }
+.pagination {
+  margin: 0 0 80px;
+  .page-item {
+    a {
+      background-color: #000000;
+      border: #ffdc22 1px solid;
+      color: #ffdc22;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: #ffdc22;
+        border: #000000 1px solid;
+        color: #000000;
       }
+    }
 
-      &.active {
-        margin: 0 5px;
-        a {
-          background-color: #ffdc22;
-          border: #000000 1px solid;
-          color: #000000;
-          transform: scale(1.2);
-          transition: 0.5s;
-        }
+    &.active {
+      margin: 0 5px;
+      a {
+        background-color: #ffdc22;
+        border: #000000 1px solid;
+        color: #000000;
+        transform: scale(1.2);
+        transition: 0.5s;
       }
     }
   }
+}
+
+.search {
+  .form-control {
+    max-width: 400px;
+    height: 60px;
+    border: 1px solid #000000;
+  }
+
+  button {
+    width: 90px;
+    background-color: #000000;
+    color: #ffdc22;
+    border: 1px solid #000000;
+    font-size: 30px;
+
+    &:focus, &:active {
+      background-color: #000000;
+      color: #ffdc22;
+      border: 1px solid #000000;
+    }
+  }
+}
+
+.alert-primary {
+  margin: 50px 0;
+  background-color: #000000;
+  color: #ffffff;
+  border: 0;
 }
 
 
@@ -99,12 +127,12 @@
       }
      }
     }
+  }
 
-    .pagination {
-      .page-item {
-        a {
-          padding: 8px;
-        }
+  .pagination {
+    .page-item {
+      a {
+        padding: 8px;
       }
     }
   }
@@ -120,5 +148,10 @@
      }
     }
   }
+}
+
+button, input {
+  outline: none !important;
+  box-shadow: none !important;
 }
 

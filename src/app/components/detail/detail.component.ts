@@ -15,14 +15,13 @@ export class DetailComponent implements OnInit {
   public detailPokemon: any = null
 
   ngOnInit(): void {
-    this.getItems(`/${this.route.snapshot.params.id}`)
+    this.getItems(`${this.route.snapshot.params.id}`)
   }
 
   getItems(params: string): void {
-    this.itemsService.getItems(params)
+    this.itemsService.getItemById(params)
       .subscribe((response: any) => {
         this.detailPokemon = response.card
-        console.log(this.detailPokemon)
     })
   }
 

@@ -9,6 +9,7 @@
     text-align: center;
     .logo {
       img {
+        cursor: pointer;
         width: 260px;
       }
     }
@@ -64,5 +65,11 @@
       display: flex;
       justify-content:  flex-start;
     }
+  }
+}
+
+img {
+  &:focus {
+    outline:  none !important;
   }
 }

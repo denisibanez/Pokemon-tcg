@@ -12,7 +12,15 @@ export class ItemsService {
 
   constructor(private http : HttpClient) {}
 
-  getItems(params) {
-    return this.http.get(`${this.baseUrl}/cards${params}`)
+  getItemsPagination(params: string) {
+    return this.http.get(`${this.baseUrl}/cards?pageSize=6&page=${params}`)
+  }
+
+  getAllItems() {
+    return this.http.get(`${this.baseUrl}/cards`)
+  }
+
+  getItemById(param: string) {
+    return this.http.get(`${this.baseUrl}/cards/${param}`)
   }
 }

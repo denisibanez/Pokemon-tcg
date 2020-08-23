@@ -1,7 +1,26 @@
 <div class="row">
   <div class="col-md-12">
-    <div class="content-body">
-      <div class="card" *ngFor="let item of listPokemon.cards">
+    <form novalidate [formGroup]="formAtribute" (ngSubmit)="searchByParam(null)">
+      <div class="input-group d-flex justify-content-center search">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Quem é esse Pokémon?"
+          formControlName="search">
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="submit" [disabled]="!formAtribute.valid">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="content-body" *ngIf="filterList.length; else notFound">
+      <div class="card" *ngFor="let item of filterList">
         <img [src]="item.imageUrl" class="card-img-top" [alt]="item.name">
         <div class="card-body">
           <h5 class="card-title">{{ item.name }}</h5>
@@ -10,26 +29,42 @@
           <button class="btn btn-primary" [routerLink]="['/detalhe',item.id]">Detalhar</button>
         </div>
       </div>
-
-      <div class="pagination">
-        <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item">
-              <a class="page-link" aria-label="Previous" (click)="prev()">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-              </a>
-            </li>
-            <li class="page-item" [class]="{ 'active' : i + 1 == currentItem }" *ngFor="let item of arrayOne(10); let i = index;"><a class="page-link"  (click)="currentPage(i)"> {{ i+1 }}</a></li>
-            <li class="page-item">
-              <a class="page-link" aria-label="Next" (click)="next()">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
     </div>
+
+    <ng-template #notFound>
+      <div class="alert alert-primary" role="alert">      
+        Desculpe, Pokémon não encontrado na Pokedex :(
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="pagination d-flex justify-content-center" *ngIf="filterList.length > 2; else backToList">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" aria-label="Previous" (click)="prev()">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li class="page-item" [class]="{ 'active' : i + 1 == currentItem }" *ngFor="let item of arrayOne(10); let i = index;"><a class="page-link"  (click)="currentPage(i)"> {{ i+1 }}</a></li>
+          <li class="page-item">
+            <a class="page-link" aria-label="Next" (click)="next()">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <ng-template #backToList class="pagination">
+      <div class="pagination d-flex justify-content-center" style="text-transform: uppercase;cursor: pointer; font-weight: bold;">
+        <a (click)="getItemsPagination('1')"> Ver todos ...</a>
+      </div>
+    </ng-template>
   </div>
 </div>

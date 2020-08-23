@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ListComponent } from './components/list/list.component';
 import { ROUTES } from './app.routes';
@@ -21,7 +22,9 @@ import { DetailComponent } from './components/detail/detail.component'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent],
